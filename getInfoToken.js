@@ -84,7 +84,28 @@ function getInfoToken(idToken){
             }
             else
             {
-                document.getElementById("originalTokenText").innerText = "probably not a copy of any other Ergo NFT!"
+                url = 'https://ergolui.com/nft-check/nfts/?'
+                if(idToken.includes("...")){
+                    idTokenParts= idToken.split("...")
+                    url += "tokenIdStartsWith=" + idTokenParts[0] + "&tokenIdEndsWith=" + idTokenParts[1]
+                }
+                else
+                {
+                    url += "token_id=" + idToken
+                }
+                fetch(url)
+                    .then(response => response.json())
+                    .then(nftsData => {
+                        console.log(nftsData)
+
+                        if(nftsData.count>0){
+                            document.getElementById("originalTokenText").innerText = "probably not a copy of any other Ergo NFT!"
+                        }
+                        else
+                        {
+                            document.getElementById("originalTokenText").innerText = "not found in our database!"
+                        }
+                    })
             }
         })
         .catch(error => console.error('Error:', error))
