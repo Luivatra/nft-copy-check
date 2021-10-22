@@ -1,7 +1,7 @@
 function getInfoToken(idToken){
     document.getElementById("oriImageToken").src = ""
     document.getElementById("imageToken").src = ""
-    url = 'http://www.ergolui.com/nft-check/nfthashcompares/?'
+    url = 'https://ergolui.com/nft-check/nfthashcompares/?'
     if(idToken.includes("...")){
         idTokenParts= idToken.split("...")
         url += "copiedTokenIdStartsWith=" + idTokenParts[0] + "&copiedTokenIdEndsWith=" + idTokenParts[1]
