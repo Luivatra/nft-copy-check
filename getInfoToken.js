@@ -1,6 +1,16 @@
 function getInfoToken(idToken){
+    document.getElementById("oriMintInfo").innerText = ""
     document.getElementById("oriImageToken").src = ""
+    document.getElementById("oriNameToken").innerText = ""
+    document.getElementById("oriIdToken").innerText = ""
+    document.getElementById("oriDescriptionToken").innerText = ""
+    document.getElementById("oriArtworkChecksum").innerText = ""
+    document.getElementById("mintInfo").innerText = ""
     document.getElementById("imageToken").src = ""
+    document.getElementById("nameToken").innerText = ""
+    document.getElementById("idToken").innerText = ""
+    document.getElementById("descriptionToken").innerText = ""
+    document.getElementById("artworkChecksum").innerText = ""
     url = 'https://ergolui.com/nft-check/nfthashcompares/?'
     if(idToken.includes("...")){
         idTokenParts= idToken.split("...")
