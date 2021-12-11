@@ -20,7 +20,7 @@ function getInfoToken(idToken){
     {
         url += "copiedTokenId=" + idToken
     }
-    url += "&threshold=0.05"
+    url += "&threshold=0.5"
     fetch(url)
         .then(response => response.json())
         .then(hashCompareData => {
